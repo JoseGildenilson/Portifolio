@@ -1,0 +1,281 @@
+/* Geral */
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background-color: #020617;
+}
+
+/* Navbar */
+
+#navbar {
+  padding: 1.5rem 2.5rem;
+}
+
+.navbar-image {
+  background-image: url(../img/1.png);
+  width: 30px; /* Tamanho da imagem */
+  height: 30px;
+  padding-right: 10px;
+  transition: 0.4s;
+  background-position: center;
+  background-size: cover;
+}
+
+.navbar-image:hover {
+  background-image: url(../img/2.png);
+  transform: translateY(-10px);
+}
+
+.navbar-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+#navbar-links {
+  display: flex;
+  gap: 3rem;
+  list-style: none;
+  text-transform: uppercase;
+}
+
+/* Decoração dos botoões do menu */
+
+#navbar-links a {
+  position: relative; /* Necessário para o pseudo-elemento funcionar */
+  text-decoration: none;
+  color: #ddd;
+  font-family: "Tomorrow", sans-serif;
+  font-weight: 700;
+  font-size: 15px;
+  transition: color 0.3s ease; /* Suaviza a troca de cor */
+}
+
+#navbar-links a::after {
+  content: ""; /* Garante que o pseudo-elemento apareça */
+  position: absolute;
+  left: 0;
+  bottom: -5px; /* Posição abaixo do texto */
+  width: 0; /* Começa invisível */
+  height: 2px;
+  background-color: #770ef7; /* Cor do sublinhado */
+  transition: width 0.3s ease-in-out; /* Animação suave */
+}
+
+#navbar-links a:hover::after {
+  width: 100%; /* Expande a linha ao passar o mouse */
+}
+#navbar-links a:hover {
+  color: #770ef7;
+}
+
+/* Animação do nome Gil_Dev */
+
+.nome {
+  font-size: 35px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #ddd;
+  flex-grow: 1;
+  transition: 0.4s;
+}
+
+.nome span {
+  font-family: "Poppins", sans-serif;
+  display: inline-block; /* Faz as letras se comportarem como blocos */
+  transition: transform 0.3s ease; /* Animação suave */
+}
+
+/* Hover para cada letra individual */
+.nome span:hover {
+  transform: translateY(-10px); /* Sobe apenas a letra individual */
+  color: #770ef7;
+}
+
+/* home */
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.greetings {
+  margin-right: 200px;
+  margin-left: 150px;
+  color: white;
+  width: 330px;
+}
+
+.greetings p {
+  padding-bottom: 10px;
+}
+
+.presentation {
+  font-family: "Almarai", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 24px;
+  color: #d1d1d1;
+}
+
+@keyframes wave {
+  0% {
+    transform: rotate(0deg);
+  }
+  10% {
+    transform: rotate(14deg);
+  } /* Inclina levemente */
+  20% {
+    transform: rotate(-8deg);
+  } /* Vai para o outro lado */
+  30% {
+    transform: rotate(14deg);
+  } /* Volta */
+  40% {
+    transform: rotate(-4deg);
+  }
+  50% {
+    transform: rotate(10deg);
+  }
+  60% {
+    transform: rotate(0deg);
+  } /* Volta à posição inicial */
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.hand {
+  width: 30px; /* Ajuste o tamanho */
+  display: inline-block;
+  transform-origin: bottom center; /* Define o ponto de rotação */
+  animation: wave 2s infinite ease-in-out; /* Executa para sempre */
+}
+
+.myname {
+  font-size: 50px;
+  font-family: "Tomorrow", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+  background-image: linear-gradient(
+    to right,
+    #873beb,
+    #1074de
+  ); /* Degradê do vermelho para o laranja */
+  -webkit-background-clip: text; /* Aplica o fundo apenas no texto */
+  color: transparent;
+}
+
+.job {
+  font-size: 30px;
+  font-weight: bold;
+  color: #770ef7;
+  border-right: 2px solid #0ed9f7; /* Simula o cursor */
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: typing 6s steps(22, end) infinite, blinkCursor 0.6s infinite;
+}
+
+/* Faz o nome apagar e reiniciar corretamente */
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  25% {
+    width: 100%; /* Escreve o texto */
+  }
+  50% {
+    width: 100%; /* Mantém o texto visível */
+  }
+  75% {
+    width: 0; /* Apaga o texto */
+  }
+  100% {
+    width: 0; /* Mantém o texto apagado antes de reiniciar */
+  }
+}
+
+/* Animação do cursor piscando */
+@keyframes blinkCursor {
+  50% {
+    border-color: transparent;
+  }
+}
+
+@keyframes floating {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Define a altura do "salto" */
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseGlow {
+  0% {
+    filter: drop-shadow(0 0 10px rgba(64, 2, 220, 0.611));
+  }
+  50% {
+    filter: drop-shadow(0 0 25px rgba(93, 47, 232, 0.648));
+  }
+  100% {
+    filter: drop-shadow(0 0 10px rgba(36, 9, 120, 0.611));
+  }
+}
+
+.levitating-doll img {
+  animation: floating 3s ease-in-out infinite, pulseGlow 2s infinite alternate;
+  width: 500px;
+}
+
+.button-home {
+  font-size: 20px;
+  text-decoration: none;
+  border: 1px solid #770ef7;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  background-color: #020617;
+  color: white;
+  padding: 20px;
+  font-family: "poppins", sans-serif;
+  font-weight: 600;
+}
+
+.arrow-forward {
+  width: 20px;
+  transform: translateY(4px);
+}
+
+.button-home:hover {
+  box-shadow: 1px 1px 25px 10px rgba(146, 148, 248, 0.4);
+}
+
+.button-home:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(146, 148, 248, 0.4),
+    transparent
+  );
+  transition: all 650ms;
+}
+
+.button-home:hover:before {
+  left: 100%;
+}
