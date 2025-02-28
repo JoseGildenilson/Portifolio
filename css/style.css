@@ -152,6 +152,7 @@ body {
 
 .hand {
   width: 30px; /* Ajuste o tamanho */
+  margin-right: 5px;
   display: inline-block;
   transform-origin: bottom center; /* Define o ponto de rotação */
   animation: wave 2s infinite ease-in-out; /* Executa para sempre */
@@ -172,7 +173,7 @@ body {
 }
 
 .job {
-  font-size: 30px;
+  font-size: 27px;
   font-weight: bold;
   color: #770ef7;
   border-right: 2px solid #0ed9f7; /* Simula o cursor */
@@ -180,6 +181,7 @@ body {
   overflow: hidden;
   white-space: nowrap;
   animation: typing 6s steps(22, end) infinite, blinkCursor 0.6s infinite;
+  font-family: "poppins", sans-serif;
 }
 
 /* Faz o nome apagar e reiniciar corretamente */
